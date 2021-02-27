@@ -11,18 +11,45 @@ window.addEventListener("load", function (){
     let indiceImagenes = 0;
     let tiempo = 1000;
 
-    function cambiarImagenes(){
+    function establecerImagen(indiceImagenes){
 
         document.slider.src = imagenes[indiceImagenes];
+    }
+
+    function cambiarImagenes(){
+        
+        //document.slider.src = imagenes[indiceImagenes];
         
         if(indiceImagenes < imagenes.length){
 
+            //document.slider.src = imagenes[indiceImagenes];
+            establecerImagen(indiceImagenes);
             indiceImagenes++;
         }
         else{
 
+
             indiceImagenes = 0;
+            establecerImagen(indiceImagenes);
+            //document.slider.src = imagenes[indiceImagenes];
         }
+      
+
+        /* 
+        for(let indiceImagenes=0; indiceImagenes<imagenes.length; indiceImagenes++){
+
+            if(indiceImagenes < imagenes.length){
+
+                document.slider.src = imagenes[indiceImagenes];
+            }
+            else{
+
+                indiceImagenes=0;
+            }
+        }
+        */
+
+
     }
 
     setInterval(cambiarImagenes, tiempo);
